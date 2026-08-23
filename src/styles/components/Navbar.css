@@ -1,0 +1,12 @@
+.navbar { position: sticky; }
+/* Premium home-page overrides */
+:root { --gold: #f0bd4f; --gold-soft: #ffe09a; --accent: #2d8cff; }
+body { background: #050d18; }
+.navbar { width: 100%; min-height: 84px; padding: 0 4vw; background: rgba(4,11,20,.94); border-bottom: 1px solid rgba(240,189,79,.2); }
+.brand { display:flex; align-items:center; gap:.65rem; color:#f3f5f8; font-family:'Cormorant Garamond',serif; font-size:clamp(1.65rem,2.3vw,2rem); font-weight:700; }
+.brand b { color:var(--gold); }
+.brand-mark { color:var(--gold); font-size:1.8rem; }
+.nav-links { display:flex; align-items:center; gap:clamp(.7rem,2vw,1.8rem); }
+.nav-links a { position:relative; padding:1.7rem .25rem 1.35rem; color:#d5dbe3; font-weight:500; }
+.nav-links a:hover,.nav-links a.active { color:var(--gold-soft); }
+.nav-links a.active::after { content:''; position:absolute; left:15%; right:15%; bottom:0; height:2px; background:var(--gold); }

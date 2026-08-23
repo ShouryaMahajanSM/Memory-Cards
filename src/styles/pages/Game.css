@@ -1,0 +1,493 @@
+/* Game page styles are isolated here. Shared tokens remain in App.css. */
+.game-page {
+  position: relative;
+}
+/* ===== Compact modes + improved game ===== */
+.mode-choice {
+  height: 230px;
+  min-height: 0;
+  padding: 1rem;
+}
+.mode-choice-icon {
+  width: 38px;
+  height: 38px;
+  margin: 1rem 0 0.65rem;
+  border-radius: 10px;
+  font-size: 1.05rem;
+}
+.mode-choice h3 {
+  font-size: 1.35rem;
+}
+.mode-choice-details {
+  margin-top: 0.55rem;
+}
+.mode-choice-details span {
+  padding: 0.28rem 0.45rem;
+  font-size: 0.68rem;
+}
+.mode-choice-arrow {
+  border-top: 0;
+  padding-top: 0.4rem;
+  justify-content: flex-end;
+  font-size: 1.1rem;
+}
+.mode-choice-type {
+  color: #8f9dae;
+  font-size: 0.65rem;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+}
+.mode-choice:hover {
+  transform: translateY(-4px);
+}
+
+.game-page {
+  padding-top: 3.5rem;
+  padding-bottom: 5rem;
+}
+.game-card {
+  max-width: 1180px;
+  margin: 0 auto;
+  padding: 2rem;
+}
+.game-header {
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+  gap: 1.5rem;
+}
+.game-header h1 {
+  margin-top: 0.25rem;
+  color: #f5f7fa;
+  font-family: "Cormorant Garamond", serif;
+  font-size: clamp(2.5rem, 5vw, 4.5rem);
+  line-height: 0.95;
+}
+.game-back-link {
+  color: var(--gold-soft);
+  border: 1px solid rgba(240, 189, 79, 0.22);
+  padding: 0.55rem 0.85rem;
+  border-radius: 10px;
+}
+.game-stats {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 0.8rem;
+  margin: 1.5rem 0 0.75rem;
+}
+.stat-box {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0.85rem 1rem;
+  border: 1px solid rgba(240, 189, 79, 0.15);
+  border-radius: 12px;
+  background: rgba(255, 255, 255, 0.025);
+}
+.stat-box small {
+  color: #8f9dae;
+  font-size: 0.72rem;
+  text-transform: uppercase;
+  letter-spacing: 0.1em;
+}
+.stat-box strong {
+  color: var(--gold-soft);
+  font-size: 1.1rem;
+}
+.timer-warning {
+  color: #ffcf69 !important;
+}
+.game-progress {
+  height: 4px;
+  overflow: hidden;
+  border-radius: 999px;
+  background: rgba(255, 255, 255, 0.08);
+  margin: 0 0 1rem;
+}
+.game-progress span {
+  display: block;
+  height: 100%;
+  background: var(--gold);
+  transition: width 0.25s ease;
+}
+.status-text {
+  margin-bottom: 1rem;
+  color: #9eabbc;
+  font-size: 0.9rem;
+}
+.cards-grid {
+  justify-content: center;
+  gap: 10px;
+  margin: 1.25rem auto 1.5rem;
+}
+.cards-grid .memory-card {
+  aspect-ratio: 1;
+}
+.win-box {
+  margin: 1rem 0;
+  padding: 1.25rem 1.5rem;
+  border-color: rgba(240, 189, 79, 0.3);
+}
+.win-box h2 {
+  font-size: 2rem;
+}
+.game-over {
+  background: rgba(120, 70, 30, 0.08);
+}
+
+@media (max-width: 720px) {
+  .game-card {
+    padding: 1.25rem;
+  }
+  .game-stats {
+    gap: 0.5rem;
+  }
+  .stat-box {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 0.2rem;
+  }
+  .game-header {
+    align-items: center;
+  }
+  .mode-choice {
+    height: 215px;
+  }
+}
+
+/* ===== Final mode text + no-scroll game layout ===== */
+.mode-choice-description {
+  min-height: 38px;
+  margin-top: 0.45rem;
+  color: #9eabbc;
+  font-size: 0.72rem;
+  line-height: 1.45;
+}
+
+.game-page {
+  height: calc(100vh - 84px);
+  min-height: 0;
+  box-sizing: border-box;
+  padding: 1rem 2vw;
+  overflow: hidden;
+  display: flex;
+  align-items: stretch;
+}
+
+.game-card {
+  width: min(1180px, 96vw);
+  height: 100%;
+  max-width: 1180px;
+  margin: 0 auto;
+  padding: 1.25rem 1.5rem;
+  box-sizing: border-box;
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+}
+
+.game-header {
+  flex: 0 0 auto;
+}
+.game-header h1 {
+  font-size: clamp(2rem, 4vw, 3.5rem);
+}
+.game-header .page-copy {
+  line-height: 1.35;
+}
+.game-stats {
+  flex: 0 0 auto;
+  margin: 0.8rem 0 0.5rem;
+}
+.game-progress {
+  flex: 0 0 auto;
+  margin-bottom: 0.5rem;
+}
+.status-text {
+  flex: 0 0 auto;
+  margin: 0.35rem 0 0.55rem;
+  font-size: 0.78rem;
+}
+
+.cards-grid {
+  flex: 1 1 auto;
+  align-content: center;
+  justify-content: center;
+  gap: 7px;
+  margin: 0.35rem auto 0.65rem;
+  width: fit-content;
+  max-width: 100%;
+}
+
+.cards-grid .memory-card {
+  min-height: 42px;
+  max-width: 58px;
+  width: 100%;
+  aspect-ratio: 1;
+  border-radius: 12px;
+  font-size: clamp(0.95rem, 2vw, 1.3rem);
+}
+
+.game-card .button-row {
+  flex: 0 0 auto;
+  justify-content: center;
+  margin-top: 0.35rem;
+}
+
+.game-card .primary-btn,
+.game-card .secondary-btn {
+  min-height: 42px;
+  padding: 0.65rem 1.15rem;
+}
+
+@media (max-height: 850px) and (min-width: 721px) {
+  .game-page {
+    padding-top: 0.5rem;
+    padding-bottom: 0.5rem;
+  }
+  .game-card {
+    padding: 0.9rem 1.2rem;
+  }
+  .game-header h1 {
+    font-size: 2.3rem;
+  }
+  .game-stats {
+    margin: 0.45rem 0 0.3rem;
+  }
+  .stat-box {
+    padding: 0.55rem 0.8rem;
+  }
+  .cards-grid {
+    gap: 5px;
+  }
+  .cards-grid .memory-card {
+    max-width: 50px;
+  }
+  .status-text {
+    margin: 0.2rem 0 0.35rem;
+  }
+  .game-card .button-row {
+    margin-top: 0.2rem;
+  }
+}
+
+@media (max-width: 720px) {
+  .mode-choice-description {
+    min-height: 0;
+  }
+  .game-page {
+    height: auto;
+    min-height: calc(100vh - 72px);
+    overflow: visible;
+    padding: 0.75rem 1rem;
+  }
+  .game-card {
+    height: auto;
+    min-height: calc(100vh - 88px);
+    padding: 1rem;
+  }
+  .cards-grid {
+    flex: 0 0 auto;
+    width: 100%;
+  }
+  .cards-grid .memory-card {
+    max-width: 58px;
+  }
+}
+
+/* ===== Compact game layout with larger, better-spaced cards ===== */
+.game-page {
+  height: calc(100vh - 84px);
+  min-height: 0;
+  overflow: hidden;
+  padding: 1rem 1.5vw;
+}
+.game-card {
+  width: min(1120px, 96vw);
+  max-width: 1120px;
+  padding: 1.35rem 1.6rem;
+}
+.game-header h1 {
+  font-size: clamp(2.25rem, 4vw, 3.6rem);
+}
+.game-stats {
+  margin: 1rem 0 0.55rem;
+}
+.stat-box {
+  padding: 0.65rem 0.9rem;
+}
+.game-progress {
+  margin-bottom: 0.65rem;
+}
+.status-text {
+  margin-bottom: 0.6rem;
+  font-size: 0.82rem;
+}
+.cards-grid {
+  gap: 12px;
+  margin: 1rem auto 1rem;
+}
+.cards-grid .memory-card {
+  width: var(--game-card-size, 68px);
+  height: var(--game-card-size, 68px);
+}
+.cards-grid-timed120 {
+  --game-card-size: 68px;
+  gap: 12px;
+}
+.button-row {
+  margin-top: 0.75rem;
+}
+
+@media (max-height: 850px) and (min-width: 721px) {
+  .game-card {
+    padding: 1rem 1.25rem;
+  }
+  .game-header h1 {
+    font-size: 2.7rem;
+  }
+  .game-stats {
+    margin: 0.65rem 0 0.4rem;
+  }
+  .cards-grid {
+    margin: 0.7rem auto 0.7rem;
+    gap: 10px;
+  }
+  .cards-grid-timed120 {
+    --game-card-size: 62px;
+    gap: 10px;
+  }
+  .status-text {
+    margin-bottom: 0.4rem;
+  }
+}
+
+@media (max-width: 720px) {
+  .modes-tabs {
+    width: 92vw;
+    overflow-x: auto;
+    justify-content: flex-start;
+  }
+  .modes-tab {
+    white-space: nowrap;
+  }
+  .game-page {
+    height: auto;
+    min-height: calc(100vh - 84px);
+    overflow: visible;
+    padding: 1rem;
+  }
+  .game-card {
+    width: 100%;
+    padding: 1rem;
+  }
+  .cards-grid-timed120 {
+    --game-card-size: clamp(42px, 12vw, 58px);
+    gap: 8px;
+  }
+}
+
+/* ===== Latest requested adjustments ===== */
+/* Start Playing now leads to the Rules page; keep the game itself unchanged. */
+
+/* Give the game board more room while keeping the whole desktop game on one screen. */
+.game-page {
+  height: calc(100vh - 84px);
+  overflow: hidden;
+  padding: 0.7rem 1vw;
+}
+.game-card {
+  width: min(1180px, 97vw);
+  padding: 1rem 1.25rem;
+}
+.game-header h1 {
+  font-size: clamp(2rem, 3.4vw, 3.2rem);
+}
+.game-stats {
+  margin: 0.65rem 0 0.4rem;
+}
+.stat-box {
+  padding: 0.55rem 0.8rem;
+}
+.game-progress {
+  margin-bottom: 0.45rem;
+}
+.status-text {
+  margin-bottom: 0.4rem;
+  font-size: 0.78rem;
+}
+.cards-grid {
+  column-gap: 16px;
+  row-gap: 12px;
+  margin: 0.65rem auto 0.65rem;
+}
+.cards-grid .memory-card {
+  width: var(--game-card-size, 76px);
+  height: var(--game-card-size, 76px);
+}
+/* 6x6 is the largest board, so give it a balanced size that still fits. */
+.cards-grid-timed120 {
+  --game-card-size: 74px;
+  column-gap: 14px;
+  row-gap: 10px;
+}
+.game-card .button-row {
+  margin-top: 0.45rem;
+}
+
+@media (max-height: 850px) and (min-width: 721px) {
+  .game-card {
+    padding: 0.8rem 1rem;
+  }
+  .game-header h1 {
+    font-size: 2.45rem;
+  }
+  .game-stats {
+    margin: 0.45rem 0 0.3rem;
+  }
+  .cards-grid {
+    margin: 0.45rem auto 0.5rem;
+    column-gap: 12px;
+    row-gap: 9px;
+  }
+  .cards-grid .memory-card {
+    --game-card-size: 72px;
+    width: 72px;
+    height: 72px;
+  }
+  .cards-grid-timed120 {
+    --game-card-size: 70px;
+    column-gap: 11px;
+    row-gap: 8px;
+  }
+}
+
+/* Keep the leaderboard compact and make the player name the only editable field. */
+.leaderboard-player input {
+  cursor: text;
+}
+.leaderboard-player small::after {
+  content: "";
+}
+
+@media (max-width: 720px) {
+  .game-page {
+    height: auto;
+    min-height: calc(100vh - 72px);
+    overflow: visible;
+    padding: 0.75rem;
+  }
+  .game-card {
+    width: 100%;
+    padding: 0.9rem;
+  }
+  .cards-grid .memory-card {
+    width: var(--game-card-size, 62px);
+    height: var(--game-card-size, 62px);
+  }
+  .cards-grid-timed120 {
+    --game-card-size: clamp(46px, 13vw, 62px);
+    column-gap: 7px;
+    row-gap: 7px;
+  }
+}
