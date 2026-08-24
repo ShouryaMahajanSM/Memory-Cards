@@ -1,0 +1,4 @@
+import React from 'react';
+import { Link } from 'react-router-dom';
+function ModeCard({ mode }) { return <Link to={`/game/${mode.id}`} className="mode-choice"><div className="mode-choice-top"><span>{mode.number}</span><span className="mode-choice-type">{mode.type}</span></div><div className="mode-choice-icon" aria-hidden="true">{mode.symbol}</div><h3>{mode.title}</h3><p className="mode-choice-description">{mode.type === 'Timed' ? `Match as many pairs as possible before the ${mode.time < 120 ? `${mode.time}-second` : 'two-minute'} timer ends.` : `A relaxed ${mode.grid} board to practice your memory at your own pace.`}</p><div className="mode-choice-details"><span>{mode.grid}</span><span>{mode.pairs}</span>{mode.time && <span>{mode.time < 120 ? `${mode.time}s` : '120s'}</span>}</div><span className="mode-choice-arrow" aria-hidden="true">→</span></Link>; }
+export default ModeCard;
